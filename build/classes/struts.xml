@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "/WEB-INF/struts-2.5.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="31457280" />
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- <action name="login" class="mptk.com.cn.action.TestAction"
+			method="login" />
+		<action name="doPostString" class="mptk.com.cn.action.TestAction"
+			method="doPostString" />
+		<action name="doPostFile" class="mptk.com.cn.action.TestAction"
+			method="doPostFile" />
+		<action name="doPostUploadFile" class="mptk.com.cn.action.TestAction"
+			method="doPostUploadFile">
+		</action>
+		<action name="getFilePathByTrackProjectId" class="mptk.com.cn.action.TestAction"
+			method="getFilePathByTrackProjectId">
+		</action> -->
+		<action name="getTrackProjectList" class="mptk.com.cn.action.TrackProjectAction"
+			method="getTrackProjectList">
+		</action>
+		<action name="getAuditResult" class="mptk.com.cn.action.TrackProjectAction"
+			method="getAuditResult">
+		</action>
+		<action name="getTrackProjectItem" class="mptk.com.cn.action.TrackProjectAction"
+			method="getTrackProjectItem">
+		</action>
+		<action name="fileUpload" class="mptk.com.cn.action.FileUploadAction"
+			method="fileUpload">
+		</action>
+		<!-- 维护稽核项是否OK -->
+		<action name="maintainAuditIsPass" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="maintainAuditIsPass">
+		</action>
+		<!-- 根据工号获取用户名 -->
+		<action name="getNameByEmpno" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="getNameByEmpno">
+		</action>
+		<!-- 根据masterId获取用户信息 -->
+		<action name="getUserInfoByMasterId" class="mptk.com.cn.action.TrackProjectAction"
+			method="getUserInfoByMasterId">
+		</action>
+		<!-- 根据部門號獲取部門名稱 -->
+		<action name="getDepartmentName" class="mptk.com.cn.action.TrackProjectAction"
+			method="getDepartmentName">
+		</action>
+		<!-- 获取客户/站点信息 -->
+		<action name="getSiteOrCustomer" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="getSiteOrCustomer"></action>
+
+
+
+		<action name="AUDIT_CATEGORY" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_CATEGORY"></action>
+		<action name="AUDIT_PROGRAM" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_PROGRAM"></action>
+		<action name="AUDIT_PLAN" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_PLAN"></action>
+		<action name="AUDIT_FACTORY" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_FACTORY"></action>
+		<action name="AUDIT_MEANING" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_MEANING"></action>
+		<action name="AUDIT_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_NAME"></action>
+		<action name="AUDIT_TYPE" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_TYPE"></action>
+		<action name="AUDIT_DESCRIPTION" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_DESCRIPTION"></action>
+		<action name="AUDIT_PROJECT_DETAILS" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_PROJECT_DETAILS"></action>
+		<action name="AUDIT_TEMPLATE_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_TEMPLATE_NAME"></action>
+		<action name="AUDIT_PROJECT_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_PROJECT_NAME"></action>
+		<action name="AUDIT_USER_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_USER_NAME"></action>
+		<action name="AUDIT_LINE_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_LINE_NAME"></action>
+		<action name="AUDIT_VENDOR_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_VENDOR_NAME"></action>
+		<action name="AUDIT_TYPE_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_TYPE_NAME"></action>
+		<action name="AUDIT_SYSTEM_ITEMS_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_SYSTEM_ITEMS_NAME"></action>
+		<action name="AUDIT_CREATE_RESULT" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_CREATE_RESULT"></action>
+		<action name="CREATE_AUDIT_PLAN" class="mptk.com.cn.action.AuditAction"
+			method="CREATE_AUDIT_PLAN"></action>
+		<action name="AUDIT_SHORT" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_SHORT"></action>
+		<action name="AUDIT_MATCH" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_MATCH"></action>
+		<action name="AUDIT_RESULT_NAME" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_RESULT_NAME"></action>
+		<action name="AUDIT_SAVE_RESULTS" class="mptk.com.cn.action.AuditAction"
+			method="AUDIT_SAVE_RESULTS"></action>
+
+		<action name="EMPNO" class="mptk.com.cn.action.AuditAction"
+			method="EMPNO"></action>
+
+		<action name="CHECK_FOR_UPDATES" class="mptk.com.cn.action.AuditAction"
+			method="CHECK_FOR_UPDATES"></action>
+		<action name="ORG_ID_BY_SITE" class="mptk.com.cn.action.AuditAction"
+			method="ORG_ID_BY_SITE"></action>
+
+
+		<!-- 登錄檢查 -->
+		<action name="login" class="mptk.com.cn.action.LoginAction"
+			method="login"></action>
+		<!-- 更新稽核計畫狀態 -->
+		<action name="updatePlanStatus" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="updatePlanStatus"></action>
+		<!-- 更新料號獲取稽核計畫信息 -->
+		<action name="getPlanInfoByPartNo" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="getPlanInfoByPartNo"></action>
+		<!-- 獲取尺寸標準值 -->
+		<action name="getCriterionByPartNo" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="getCriterionByPartNo"></action>
+		<!-- 獲取尺寸標準值 -->
+		<action name="getCriterionByPart" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="getCriterionByPart"></action>
+		<!-- 獲取尺寸標準值 -->
+		<action name="getPlanStatus" class="mptk.com.cn.action.AuditItemMaintainAction"
+			method="getPlanStatus"></action>
+			
+		<!-- 根據料號獲取機種和品名 -->
+		<action name="getModelAndPartByPartNo" class="mptk.com.cn.action.AuditAction"
+			method="getModelAndPartByPartNo"></action>
+			
+		<!-- 下載APP -->
+		<action name="downloadApp" class="mptk.com.cn.action.DownloadAppAction"
+			method="downloadApp">
+			<result name="SUCCESS">/downloadApp/downloadApp.jsp</result>
+		</action>
+
+		<!-- 根據料號獲取機種和品名 -->
+		<action name="getAuditResult" class="mptk.com.cn.action.AuditAction"
+			method="getAuditResult"></action>
+
+		<!-- 掃描機台獲取料號 -->
+		<action name="getPartNoByToolName" class="mptk.com.cn.action.AuditAction"
+			method="getPartNoByToolName"></action>
+
+		<!-- 获取用户基本信息 -->
+		<action name="getUserInfo" class="mptk.com.cn.action.AuditAction"
+			method="getUserInfo"></action>
+
+		<!-- 获取稽核结果,单项 -->
+		<action name="getPlanResultOne" class="mptk.com.cn.action.AuditAction"
+			method="getPlanResultOne"></action>
+
+		<!-- 更新稽核结果,单项 -->
+		<action name="updatePlanResultOne" class="mptk.com.cn.action.AuditAction"
+			method="updatePlanResultOne"></action>
+
+		<!-- 根據樣本獲取製程 -->
+		<action name="getProcessByTemp" class="mptk.com.cn.action.AuditAction"
+			method="getProcessByTemp"></action>
+
+		<!-- 获取模号MVL -->
+		<action name="getMoldMvl" class="mptk.com.cn.action.AuditAction"
+			method="getMoldMvl"></action>
+
+		<!-- 获取机台列表MVL -->
+		<action name="getMvlEquipment" class="mptk.com.cn.action.AuditAction"
+			method="getMvlEquipment"></action>
+
+		<!-- 获取检验频率 -->
+		<action name="getFrequency" class="mptk.com.cn.action.AuditAction"
+			method="getFrequency"></action>
+
+		<!-- 獲取MPT_LOOKUP_VALUES中的配置值 -->
+		<action name="getLookupValues" class="mptk.com.cn.action.AuditAction"
+			method="getLookupValues"></action>
+
+		<!-- 獲取巡檢數量明細 -->
+		<action name="getInventoryNumberDetail" class="mptk.com.cn.action.InspectionNumberAction"
+			method="getInventoryNumberDetail"></action>
+
+		<!-- 維護巡檢時的數量明細 -->
+		<action name="updataInventoryNumberDetail" class="mptk.com.cn.action.InspectionNumberAction"
+			method="updataInventoryNumberDetail"></action>
+
+		<!-- 掃描機台獲取料號 -->
+		<action name="getPnByFacility" class="mptk.com.cn.action.AuditAction"
+			method="getPnByFacility"></action>
+
+		<!-- 根據工號獲取MasterId -->
+		<action name="getMasterIdByEmpno" class="mptk.com.cn.action.AuditAction"
+			method="getMasterIdByEmpno"></action>
+			
+	</package>
+	<!--解决乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+</struts>
